@@ -27,7 +27,8 @@
     "src/client/images/ishihara.png",
     "src/client/images/astigmatism-1.png",
     "src/client/images/astigmatism-2.png",
-    "src/client/images/astigmatism-3.png"
+    "src/client/images/astigmatism-3.png",
+    "src/client/images/amsler-grid.png"
   ],
   "ignore": [
     "*.md",

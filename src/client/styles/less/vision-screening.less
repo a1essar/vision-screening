@@ -21,6 +21,11 @@
     width: 800px;
     height: 450px;
   }
+
+  [data-vision-screening-stage='amsler-test'] & {
+    width: 600px;
+    height: 600px;
+  }
 }
 
 [data-vision-screening-controls] {
@@ -87,6 +92,11 @@
   [data-vision-screening-stage='colour-vision'] & {
     width: 239px;
     height: 239px;
+  }
+
+  [data-vision-screening-stage='amsler-test'] & {
+    width: 100%;
+    height: 100%;
   }
 
   [data-vision-screening-stage='distance-vision'] & {
@@ -172,6 +182,11 @@
 
 .astigmatism-3{
   background: url('../../images/astigmatism-3.png') no-repeat 0 0 transparent;
+  background-size: contain;
+}
+
+.amsler-grid{
+  background: url('../../images/amsler-grid.png') no-repeat 0 0 transparent;
   background-size: contain;
 }
 

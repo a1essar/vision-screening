@@ -6,8 +6,9 @@ define('vision-screening', [
     'contrast-vision',
     'colour-vision',
     'distance-vision',
-    'astigmatism-vision'
-],  function (domReady, _, Backbone, VisualAcuity, ContrastVision, ColourVision, DistanceVision, AstigmatismVision) {
+    'astigmatism-vision',
+    'amsler-test'
+],  function (domReady, _, Backbone, VisualAcuity, ContrastVision, ColourVision, DistanceVision, AstigmatismVision, AmslerTest) {
     'use strict';
 
     /* todo: Amsler test */
@@ -139,6 +140,9 @@ define('vision-screening', [
         },
         'astigmatism-vision': function(){
             new AstigmatismVision(_defaults);
+        },
+        'amsler-test': function(){
+            new AmslerTest(_defaults);
         }
     };
 

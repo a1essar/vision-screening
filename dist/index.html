@@ -40,6 +40,7 @@
             <li class="" data-vision-screening-nav-item="colour-vision"><a href="#/page/colour-vision">Проверка цветовосприятия</a></li>
             <li class="" data-vision-screening-nav-item="distance-vision"><a href="#/page/distance-vision">Проверка близорукости и дальнозоркости</a></li>
             <li class="" data-vision-screening-nav-item="astigmatism-vision"><a href="#/page/astigmatism-vision">Проверка астигматизма</a></li>
+            <li class="" data-vision-screening-nav-item="amsler-test"><a href="#/page/amsler-test">Тест амслера</a></li>
         </ul>
     </div>
     <div class="bs-callout bs-callout-info">
@@ -603,6 +604,45 @@
                 </div>
 
                 <p>Вопрос <span data-vision-screening-test-iteration>1</span> из <span data-vision-screening-test-length>1</span></p>
+
+                <a class="btn btn-default" data-vision-screening-reload><i class="fa fa-refresh"></i> Пройти заново</a>
+                <a class="btn btn-primary" href="#/page/amsler-test">Следующий тест <i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+        <div class="stage" data-vision-screening-stage="amsler-test">
+            <h2>Тест Амслера</h2>
+
+            <div class="test" data-vision-screening-test>
+                <div class="canvas" data-vision-screening-test-canvas>
+                    <div class="amsler-grid" data-vision-screening-test-canvas-symbol>
+                    </div>
+                </div>
+
+                <span data-vision-screening-controls="right"><i class="fa fa-arrow-right"></i></span>
+                <span data-vision-screening-controls="left"><i class="fa fa-arrow-left"></i></span>
+            </div>
+
+            <div class="test-result hide" data-vision-screening-test-result='{"left": "Вы успешно прошли тест :)", "right": "Вы не прошли тест :("}'>
+                <div data-vision-screening-test-result-message=""></div>
+
+                <div class="alert alert-info" role="alert">
+                    <p>Данный тест носит предварительный и информативный характер.</p>
+                    <p>Советуем проверить зрение в салоне оптики у специалиста.</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="bs-callout bs-callout-warning">
+                    <h4>Условия</h4>
+                    <p>Закройте один глаз рукой, а другим зафиксируйте взгляд на крупной черной точке, расположенной по центру решетки. Зафиксируйте взгляд на 2-5 секунд, затем, не отрывая взгляда от центра решетки медленно приближайтесь к экрану монитора, на расстояние в 15 см. до него.</p>
+                    <p>Ту же процедуру повторите с другим глазом.</p>
+                </div>
+
+                <div class="bs-callout bs-callout-info">
+                    <h4>Варианты ответа</h4>
+                    <p><span data-vision-screening-controls="left"><i class="fa fa-arrow-left"></i></span> &mdash; Линии ровные, без искажений.</p>
+                    <p><span data-vision-screening-controls="right"><i class="fa fa-arrow-right"></i></span> &mdash; Линии искажены, присутствуют пятны и искривления.</p>
+                </div>
 
                 <a class="btn btn-default" data-vision-screening-reload><i class="fa fa-refresh"></i> Пройти заново</a>
             </div>
