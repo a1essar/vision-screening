@@ -67,9 +67,11 @@
                 <span data-vision-screening-controls="left"><i class="fa fa-arrow-left"></i></span>
             </div>
 
-            <div class="test-result hide" data-vision-screening-test-result>
+            <div class="test-result hide" data-vision-screening-test-result='{"success": "Вы успешно прошли тест :)", "warning": "Вы не прошли тест :("}'>
                 <div class="alert alert-info" role="alert">
                     <p>Ваш результат:&nbsp;<strong><span data-vision-screening-test-result-value>0</span>%</strong></p>
+
+                    <div data-vision-screening-test-result-message></div>
                 </div>
                 <div class="alert alert-info" role="alert">
                     <p>Данный тест носит предварительный и информативный характер.</p>
@@ -104,9 +106,11 @@
                 <span data-vision-screening-controls="left"><i class="fa fa-arrow-left"></i></span>
             </div>
 
-            <div class="test-result hide" data-vision-screening-test-result>
+            <div class="test-result hide" data-vision-screening-test-result='{"success": "Вы успешно прошли тест :)", "warning": "Вы не прошли тест :("}'>
                 <div class="alert alert-info" role="alert">
                     <p>Ваш результат:&nbsp;<strong><span data-vision-screening-test-result-value>0</span>%</strong></p>
+
+                    <div data-vision-screening-test-result-message></div>
                 </div>
                 <div class="alert alert-info" role="alert">
                     <p>Данный тест носит предварительный и информативный характер.</p>
@@ -137,9 +141,10 @@
                 <span data-vision-screening-controls="left"><i class="fa fa-arrow-left"></i></span>
             </div>
 
-            <div class="test-result hide" data-vision-screening-test-result>
+            <div class="test-result hide" data-vision-screening-test-result='{"success": "Вы успешно прошли тест :)", "warning": "Вы не прошли тест :("}'>
                 <div class="alert alert-info" role="alert">
                     <p>Ваш результат:&nbsp;<strong><span data-vision-screening-test-result-value>0</span>%</strong></p>
+                    <div data-vision-screening-test-result-message></div>
                 </div>
                 <div class="alert alert-info" role="alert">
                     <p>Данный тест носит предварительный и информативный характер.</p>
@@ -528,16 +533,8 @@
                 <span data-vision-screening-controls="left"><i class="fa fa-arrow-left"></i></span>
             </div>
 
-            <div class="test-result hide" data-vision-screening-test-result>
-                <div class="alert alert-success up hide" role="alert">
-                    <p>Ваш результат:&nbsp;<strong>100%</strong></p>
-                </div>
-                <div class="alert alert-warning right hide" role="alert">
-                    <p>Существует вероятность наличия <strong>близорукости</strong></p>
-                </div>
-                <div class="alert alert-warning left hide" role="alert">
-                    <p>Существует вероятность наличия <strong>дальнозоркости</strong></p>
-                </div>
+            <div class="test-result hide" data-vision-screening-test-result='{"up": "Вы успешно прошли тест :)", "right": "Существует вероятность наличия близорукости", "left": "Существует вероятность наличия дальнозоркости"}'>
+                <div data-vision-screening-test-result-message=""></div>
 
                 <div class="alert alert-info" role="alert">
                     <p>Данный тест носит предварительный и информативный характер.</p>
@@ -571,13 +568,9 @@
                 <span data-vision-screening-controls="left"><i class="fa fa-arrow-left"></i></span>
             </div>
 
-            <div class="test-result hide" data-vision-screening-test-result>
-                <div class="alert alert-success success hide" role="alert">
-                    <p>Ваш результат:&nbsp;<strong>100%</strong></p>
-                </div>
-                <div class="alert alert-warning warn hide" role="alert">
-                    <p>Существует вероятность наличия <strong>астигматизма</strong></p>
-                </div>
+            <div class="test-result hide" data-vision-screening-test-result='{"success": "Вы успешно прошли тест :)", "warning": "Вы не прошли тест :("}'>
+                <div data-vision-screening-test-result-message=""></div>
+
                 <div class="alert alert-info" role="alert">
                     <p>Данный тест носит предварительный и информативный характер.</p>
                     <p>Советуем проверить зрение в салоне оптики у специалиста.</p>

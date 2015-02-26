@@ -9,7 +9,9 @@ define('contrast-vision', [
     /** private */
     var _this,
         _defaults = {
-            reload: true
+            reload: true,
+            name: 'contrast-vision',
+            messages: {}
         };
 
     /** constructor */
@@ -21,6 +23,12 @@ define('contrast-vision', [
         }, _defaults, options);
 
         _this = this;
+
+        var messages = _this.options.$elements.result.attr('data-vision-screening-test-result');
+
+        if(messages){
+            _this.options.messages = JSON.parse(messages);
+        }
 
         if(this.options.reload){
             initialize();
@@ -68,6 +76,13 @@ define('contrast-vision', [
            _this.options.$elements.result.addClass('hide');
            _this.options.$elements.resultValue.html('');
 
+           _this.options.$elements.resultMessage.html('');
+           _this.options.$elements.resultMessage.removeClass('success');
+           _this.options.$elements.resultMessage.removeClass('warning');
+
+           _this.options.$elements.navItem.filter('.active').removeClass('success');
+           _this.options.$elements.navItem.filter('.active').removeClass('warning');
+
            _this.options.$elements.symbol.removeClass('up right down left');
            _this.options.$elements.symbol.addClass(value);
 
@@ -98,9 +113,19 @@ define('contrast-vision', [
        }
 
        function result(){
+           var r = Math.round(success/(steps) * 100);
+
            _this.options.$elements.test.addClass('hide');
            _this.options.$elements.result.removeClass('hide');
-           _this.options.$elements.resultValue.html(Math.round(success/(steps) * 100));
+           _this.options.$elements.resultValue.html(r);
+
+           if(r == 100){
+               _this.options.$elements.resultMessage.addClass('success').html(_this.options.messages['success']);
+               _this.options.$elements.navItem.filter('.active').addClass('success');
+           }else{
+               _this.options.$elements.resultMessage.addClass('warning').html(_this.options.messages['warning']);
+               _this.options.$elements.navItem.filter('.active').addClass('warning');
+           }
 
            _defaults.reload = false;
 

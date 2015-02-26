@@ -17,7 +17,9 @@
     /** private */
     var _this,
         _defaults = {
-            reload: true
+            reload: true,
+            name: 'distance-vision',
+            messages: {}
         };
 
     /** constructor */
@@ -29,6 +31,12 @@
         }, _defaults, options);
 
         _this = this;
+
+        var messages = _this.options.$elements.result.attr('data-vision-screening-test-result');
+
+        if(messages){
+            _this.options.messages = JSON.parse(messages);
+        }
 
         if(this.options.reload){
             initialize();
@@ -71,6 +79,13 @@
            _this.options.$elements.test.removeClass('hide');
            _this.options.$elements.result.addClass('hide');
            _this.options.$elements.result.find('.up, .left, .right').addClass('hide');
+
+           _this.options.$elements.resultMessage.html('');
+           _this.options.$elements.resultMessage.removeClass('success');
+           _this.options.$elements.resultMessage.removeClass('warning');
+
+           _this.options.$elements.navItem.filter('.active').removeClass('success');
+           _this.options.$elements.navItem.filter('.active').removeClass('warning');
        }
 
        function check(action){
@@ -88,6 +103,16 @@
            _this.options.$elements.test.addClass('hide');
            _this.options.$elements.result.removeClass('hide');
            _this.options.$elements.result.find('.' + value).removeClass('hide');
+
+           var r;
+           if(value == 'up'){
+               r = 'success';
+           }else{
+               r = 'warning';
+           }
+
+           _this.options.$elements.resultMessage.addClass(r).html(_this.options.messages[value]);
+           _this.options.$elements.navItem.filter('.active').addClass(r);
 
            _defaults.reload = false;
 

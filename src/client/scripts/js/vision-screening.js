@@ -10,7 +10,7 @@ define('vision-screening', [
 ],  function (domReady, _, Backbone, VisualAcuity, ContrastVision, ColourVision, DistanceVision, AstigmatismVision) {
     'use strict';
 
-    /* todo: nav status, Amsler test */
+    /* todo: Amsler test */
 
     console.log('%cfile: vision-screening.js', 'color: #C2ECFF');
 
@@ -30,6 +30,7 @@ define('vision-screening', [
                 testLength: '[data-vision-screening-stage].active [data-vision-screening-test-length]',
                 result: '[data-vision-screening-stage].active [data-vision-screening-test-result]',
                 resultValue: '[data-vision-screening-stage].active [data-vision-screening-test-result-value]',
+                resultMessage: '[data-vision-screening-stage].active [data-vision-screening-test-result-message]',
                 nav: '[data-vision-screening-nav]',
                 navItem: '[data-vision-screening-nav-item]'
             },
