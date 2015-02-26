@@ -1,0 +1,273 @@
+[data-vision-screening-stage] {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+[data-vision-screening-test] {
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+  margin: 60px 0;
+
+  &.hide {
+    display: none;
+  }
+
+  [data-vision-screening-stage='distance-vision'] & {
+    width: 800px;
+    height: 450px;
+  }
+}
+
+[data-vision-screening-controls] {
+  font-size: 16px;
+  line-height: 32px;
+
+  display: inline-block;
+
+  width: 32px;
+  height: 32px;
+
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+
+  border-radius: 3px;
+  background: #dcdcdc;
+
+  [data-vision-screening-test] & {
+    display: block;
+    position: absolute;
+  }
+}
+
+[data-vision-screening-test] [data-vision-screening-controls='up'] {
+  top: 0;
+  left: 50%;
+
+  margin: 0 0 0 -32px/2;
+}
+
+[data-vision-screening-test] [data-vision-screening-controls='right'] {
+  top: 50%;
+  right: 0;
+
+  margin: -32px/2 0 0 0;
+}
+
+[data-vision-screening-test] [data-vision-screening-controls='down'] {
+  bottom: 0;
+  left: 50%;
+
+  margin: 0 0 0 -32px/2;
+}
+
+[data-vision-screening-test] [data-vision-screening-controls='left'] {
+  top: 50%;
+  left: 0;
+
+  margin: -32px/2 0 0 0;
+}
+
+[data-vision-screening-test-canvas] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 32px;
+  height: 32px;
+  margin: auto;
+
+  [data-vision-screening-stage='colour-vision'] & {
+    width: 239px;
+    height: 239px;
+  }
+
+  [data-vision-screening-stage='distance-vision'] & {
+    width: 100%;
+    height: 100%;
+  }
+
+  [data-vision-screening-stage='astigmatism-vision'] & {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+[data-vision-screening-test-canvas-symbol] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  margin: auto;
+
+  transform: rotate(0deg);;
+
+  &.up {
+    transform: rotate(270deg);
+  }
+
+  &.right {
+    transform: rotate(0deg);
+  }
+
+  &.down {
+    transform: rotate(90deg);
+  }
+
+  &.left {
+    transform: rotate(180deg);
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  path {
+    /*shape-rendering: crispEdges;*/
+  }
+
+  [data-vision-screening-stage='colour-vision'] & {
+
+  }
+
+  [data-vision-screening-stage='distance-vision'] & {
+
+  }
+}
+
+[data-vision-screening-test-result] {
+  &.hide {
+    display: none;
+  }
+}
+
+.astigmatism-1{
+  background: url('../../images/astigmatism-1.png') no-repeat 0 0 transparent;
+  background-size: contain;
+}
+
+.astigmatism-2{
+  background: url('../../images/astigmatism-2.png') no-repeat 0 0 transparent;
+  background-size: contain;
+}
+
+.astigmatism-3{
+  background: url('../../images/astigmatism-3.png') no-repeat 0 0 transparent;
+  background-size: contain;
+}
+
+.ishihara {
+  max-width: 100%;
+
+  background-image: url('../../images/ishihara.png');
+  background-size: 100%;
+}
+
+.ishihara-1 {
+  background-position: 0 0;
+  background-size: 100%;
+}
+.ishihara-2 {
+  background-position: 0 7.692308%;
+  background-size: 100%;
+}
+.ishihara-3 {
+  background-position: 0 15.384615%;
+  background-size: 100%;
+}
+.ishihara-4 {
+  background-position: 0 23.076923%;
+  background-size: 100%;
+}
+.ishihara-5 {
+  background-position: 0 30.769231%;
+  background-size: 100%;
+}
+.ishihara-6 {
+  background-position: 0 38.461538%;
+  background-size: 100%;
+}
+.ishihara-7 {
+  background-position: 0 46.153846%;
+  background-size: 100%;
+}
+.ishihara-8 {
+  background-position: 0 53.846154%;
+  background-size: 100%;
+}
+.ishihara-9 {
+  background-position: 0 61.538462%;
+  background-size: 100%;
+}
+.ishihara-10 {
+  background-position: 0 69.230769%;
+  background-size: 100%;
+}
+.ishihara-11 {
+  background-position: 0 76.923077%;
+  background-size: 100%;
+}
+.ishihara-12 {
+  background-position: 0 84.615385%;
+  background-size: 100%;
+}
+.ishihara-13 {
+  background-position: 0 92.307692%;
+  background-size: 100%;
+}
+.ishihara-14 {
+  background-position: 0 100%;
+  background-size: 100%;
+}
+
+.bs-callout{
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+
+.bs-callout-info {
+  border-left-color: #1b809e;
+}
+
+.bs-callout-info h4 {
+  color: #1b809e;
+}
+
+.bs-callout-warning {
+  border-left-color: #aa6708;
+}
+
+.bs-callout-warning h4 {
+  color: #aa6708;
+}
+
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}

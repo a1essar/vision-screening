@@ -1,0 +1,268 @@
+.wrap {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.non-responsive {
+  max-width: 100%;
+  min-width: 1000px;
+}
+
+.responsive {
+  max-width: 100%;
+  min-width: 320px;
+}
+
+.clearfix{
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both; //test
+  }
+}
+
+.centering-block{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: 0;
+  }
+}
+
+.centering-element{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font: normal normal normal @font-size/@line-height @font-face, sans-serif;
+  text-align: left;
+}
+
+.circle{
+    border-radius: 100%;
+}
+
+.pos-rel{
+    position: relative;
+}
+
+.pos-abs{
+    position: absolute;
+}
+
+.abs-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.abs-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    margin: auto;
+}
+
+.abs-right {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.abs-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    margin: auto;
+}
+
+.abs-bottom {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.block{
+    display: block;    
+}
+
+.inline-block{
+    display: inline-block;    
+}
+
+.inline{
+    display: inline;    
+}
+
+.visible{
+    visibility: visible;
+}
+
+.invisible{
+    visibility: hidden;
+}
+
+.show{
+    display: block !important;
+}
+
+.hide{
+    display: none !important;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.lowercase{
+    text-transform: lowercase;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.no-border{
+    border: 0 !important;   
+}
+
+.no-margin{
+    margin: 0 !important;    
+}
+
+.no-padding{
+    padding: 0 !important;
+}
+
+.generate-prop-value(20, width, 5, 1px, px);
+
+.generate-prop-value(20, width, 5, 1%, pr);
+
+.generate-prop-value(20, margin-top, 5, 1px, px) !important;
+
+.generate-prop-value(20, margin-right, 5, 1px, px) !important;
+
+.generate-prop-value(20, margin-bottom, 5, 1px, px) !important;
+
+.generate-prop-value(20, margin-left, 5, 1px, px) !important;
+
+.generate-prop-value(20, padding-top, 5, 1px, px) !important;
+
+.generate-prop-value(20, padding-right, 5, 1px, px) !important;
+
+.generate-prop-value(20, padding-bottom, 5, 1px, px) !important;
+
+.generate-prop-value(20, padding-left, 5, 1px, px) !important;
+
+.generate-prop-value(20, z-index, 1, 1, 1) !important;
+
+.background-transparent{
+    background: transparent !important;
+}
+
+.transition{
+    transition: all .3s linear;
+}
+
+.no-transition{
+    transition: none !important;
+}
+
+.display-table{
+    display: table;
+}
+
+.display-table-cell{
+    display: table-cell;
+}
+
+.vertical-align-top{
+    vertical-align: top;
+}
+
+.vertical-align-middle{
+    vertical-align: middle;
+}
+
+.vertical-align-bottom{
+    vertical-align: bottom;
+}
+
+.pointer-events-none{
+    pointer-events: none;
+}
+
+.color-white{
+    color: @white !important;
+}
+
+.color-black{
+    color: @black !important;
+}
+
+.color-red{
+    color: @red !important;
+}
+
+.color-green{
+    color: @green !important;
+}
+
+.color-blue{
+    color: @blue !important;
+}
+
+.bg-white{
+    background-color: @white !important;
+}
+
+.bg-black{
+    background-color: @black !important;
+}
+
+.bg-red{
+    background-color: @red !important;
+}
+
+.bg-green{
+    background-color: @green !important;
+}
+
+.bg-blue{
+    background-color: @blue !important;
+}

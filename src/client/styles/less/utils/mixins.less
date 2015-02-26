@@ -1,0 +1,21 @@
+.generate-prop-value(@n, @prop, @step, @unit, @unit-name, @i: 1) when (@i =< @n) and (@unit-name = pr) {
+    @prop-step: @step * @i;
+    @value-step: @step * @i * @unit;
+    .@{prop}-@{prop-step}@{unit-name} {
+        @{prop}: @value-step;
+    }
+    .generate-prop-value(@n, @prop, @step, @unit, @unit-name, @i + 1);
+}
+
+.generate-prop-value(@n, @prop, @step, @unit, @unit-name, @i: 1) when (@i =< @n) and (default()) {
+    @value-step: @step * @i * @unit;
+    .@{prop}-@{value-step} {
+        @{prop}: @value-step;
+    }
+    .generate-prop-value(@n, @prop, @step, @unit, @unit-name, @i + 1);
+}
+
+/* ps-tracking(px) * font-size(px) / 1000 = letter-spacing(px) */
+.letter-spacing(@ps-tracking, @font-size){
+    letter-spacing: (@ps-tracking * @font-size)/1000 * 1px;
+}
