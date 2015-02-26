@@ -23,6 +23,7 @@
     "src/client/scripts/js/contrast-vision.js",
     "src/client/scripts/js/distance-vision.js",
     "src/client/scripts/js/visual-acuity.js",
+    "src/client/scripts/js/amsler-test.js",
 
     "src/client/images/ishihara.png",
     "src/client/images/astigmatism-1.png",
