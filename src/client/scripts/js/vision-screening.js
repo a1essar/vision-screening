@@ -58,21 +58,16 @@ define('vision-screening', [
         domReady(function () {
             console.log('%ctrace: Vision-screening -> constructor -> domReady', 'color: #ccc');
 
-            domElementsUpdates();
-
             _defaults.$elements.body = $('body');
+
+            domElementsUpdates();
 
             _this.domReady = true;
 
             router.on('route:page', _this.controller);
 
             _defaults.$elements.body.off('click', '[data-vision-screening-reload]').on('click', '[data-vision-screening-reload]', function(e){
-                console.log('%ctrace: Vision-screening -> reload', 'color: #ccc');
-
-                e.preventDefault();
-
-                _defaults.reload = true;
-                _this.controller(_defaults.$elements.activeStage.attr('data-vision-screening-stage'));
+                reload(e);
             });
         });
     }
@@ -83,6 +78,15 @@ define('vision-screening', [
         _.forEach(_defaults.elements, function(value, key){
             _defaults.$elements[key] = $(value);
         });
+    }
+
+    function reload(e){
+        console.log('%ctrace: Vision-screening -> reload', 'color: #ccc');
+
+        e.preventDefault();
+
+        _defaults.reload = true;
+        _this.controller(_defaults.$elements.activeStage.attr('data-vision-screening-stage'));
     }
 
     var controller = function(page){

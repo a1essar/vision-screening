@@ -38,13 +38,14 @@
             _this.options.messages = JSON.parse(messages);
         }
 
-        if(this.options.reload){
+        if(_this.options.reload){
+            _defaults.reload = true;
             initialize();
         }
     }
 
    var initialize = function (){
-       console.log('%ctrace: Distance-vision -> initialize', 'color: #ccc');
+       console.log('%ctrace: Amsler-test -> initialize', 'color: #ccc');
 
        var steps = 1,
            step = 0,

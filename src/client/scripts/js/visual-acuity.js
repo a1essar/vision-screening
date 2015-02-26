@@ -31,6 +31,7 @@ define('visual-acuity', [
         }
 
         if(this.options.reload){
+            _defaults.reload = true;
             initialize();
         }
     }
