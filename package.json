@@ -20,7 +20,7 @@
     "gulp-csso": "^0.2.9",
     "gulp-exec": "^2.1.1",
     "gulp-filter": "^2.0.0",
-    "gulp-gzip": "0.0.8",
+    "gulp-gh-pages": "^0.4.0",
     "gulp-if": "^1.2.5",
     "gulp-less": "^2.0.1",
     "gulp-plumber": "^0.6.6",

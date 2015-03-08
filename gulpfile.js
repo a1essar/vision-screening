@@ -19,13 +19,9 @@ var gulpCsso = require('gulp-csso');
 var gulpSourcemaps = require('gulp-sourcemaps');
 var gulpRimraf = require('gulp-rimraf');
 var gulpFilter = require('gulp-filter');
-var gulpTtf2woff = require('gulp-ttf2woff');
-var gulpGzip = require('gulp-gzip');
-var gulpImage = require('gulp-image');
-var gulpWebp = require('gulp-webp');
 var gulpExec = require('gulp-exec');
 var mainBowerFiles = require('main-bower-files');
-var lazypipe = require('lazypipe');
+var gulpGhPages = require('gulp-gh-pages');
 
 var options = {
     'autoprefixerOptions': [
@@ -301,40 +297,6 @@ gulp.task('clean:svg', function(callback) {
 
 gulp.task('copy', ['copy:main', 'copy:images', 'copy:fonts', 'copy:json', 'copy:svg']);
 
-gulp.task('ttf2woff', function(){
-    gulp.src(options.paths.fontsConverts.src)
-        .pipe(gulpTtf2woff())
-        .pipe(gulp.dest(options.paths.fontsConverts.dest));
-});
-
-gulp.task('optimize-images', function () {
-    return gulp.src(options.paths.optimizeImages.src)
-        .pipe(gulpImage())
-        .pipe(gulp.dest(options.paths.optimizeImages.dest))
-        ;
-});
-
-gulp.task('images-to-webp', function () {
-    return gulp.src(options.paths.optimizeImages.src)
-        .pipe(gulpWebp({quality: 60}))
-        .pipe(gulp.dest(options.paths.optimizeImages.dest))
-        ;
-});
-
-gulp.task('gzip:styles', function(){
-    gulp.src(options.paths.gzip.styles)
-        .pipe(gulpGzip())
-        .pipe(gulp.dest(options.paths.dest.styles));
-});
-
-gulp.task('gzip:scripts', function(){
-    gulp.src(options.paths.gzip.scripts)
-        .pipe(gulpGzip())
-        .pipe(gulp.dest(options.paths.dest.scripts));
-});
-
-gulp.task('gzip', ['gzip:styles', 'gzip:scripts']);
-
 gulp.task('test', function() {
     var execOptions = {
         continueOnError: false, // default = false, true means don't emit error event
@@ -360,6 +322,11 @@ gulp.task('browser-sync', function() {
             baseDir: 'dist'
         }
     });
+});
+
+gulp.task('gh-pages', function () {
+    return gulp.src('./dist/**/*')
+        .pipe(gulpGhPages(options));
 });
 
 gulp.task('go', ['copy', 'bower:images', 'bower:fonts', 'styles', 'scripts']);
