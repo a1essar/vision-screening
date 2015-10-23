@@ -30,6 +30,7 @@ define('vision-screening', [
                 testIteration: '[data-vision-screening-stage].active [data-vision-screening-test-iteration]',
                 testLength: '[data-vision-screening-stage].active [data-vision-screening-test-length]',
                 result: '[data-vision-screening-stage].active [data-vision-screening-test-result]',
+                resultStatus: '[data-vision-screening-test-result-status]',
                 resultValue: '[data-vision-screening-stage].active [data-vision-screening-test-result-value]',
                 resultMessage: '[data-vision-screening-stage].active [data-vision-screening-test-result-message]',
                 nav: '[data-vision-screening-nav]',
@@ -87,6 +88,7 @@ define('vision-screening', [
 
         _defaults.reload = true;
         _this.controller(_defaults.$elements.activeStage.attr('data-vision-screening-stage'));
+        _defaults.$elements.resultStatus.html('0');
     }
 
     var controller = function(page){

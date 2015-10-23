@@ -128,6 +128,8 @@ define('contrast-vision', [
                _this.options.$elements.navItem.filter('.active').addClass('warning');
            }
 
+           _this.options.$elements.resultStatus.filter('[data-vision-screening-test-result-status="' + _this.options.name + '"]').html(success);
+
            _defaults.reload = false;
 
            console.log('test end,', 'success', success);

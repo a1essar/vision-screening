@@ -107,7 +107,10 @@
 
            var r;
            if(value == 'up'){
+               success++;
                r = 'success';
+
+               _this.options.$elements.resultStatus.filter('[data-vision-screening-test-result-status="' + _this.options.name + '"]').html(success);
            }else{
                r = 'warning';
            }

@@ -15,7 +15,7 @@
     "browser-sync": "^2.0.0-rc3",
     "chai": "^1.10.0",
     "event-stream": "^3.2.1",
-    "gulp": "^3.8.10",
+    "gulp": "^3.9.0",
     "gulp-concat": "^2.4.3",
     "gulp-csso": "^0.2.9",
     "gulp-exec": "^2.1.1",
